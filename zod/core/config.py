@@ -1,13 +1,26 @@
-from os import path
 from dataclasses import dataclass, field, asdict
-
+from os import path
+from typing import List
 import json
+
+
+@dataclass()
+class reloading_app:
+    app: str
+    cmd: str
+
+    def __getitem__(self, index):
+        return self.cmd[index]
+
+    def __len__(self):
+        return len(self.cmd)
 
 
 @dataclass
 class bg_config:
     wallpaper_dir: str = ""
     updatebg_cmd: str = ""
+    to_reloading: List[reloading_app] = field(default_factory=list)
 
 
 @dataclass
@@ -35,7 +48,6 @@ class config:
 
     def save(self):
         with open(self.file_path, "w") as f:
-            print(self.config_data)
             json.dump(asdict(self.config_data), f, indent=2)
 
 
@@ -50,4 +62,16 @@ class cfg_bg:
 
     def updatebg_cmd(self, cmd):
         self.cfg_bg.updatebg_cmd = cmd
+        self.cfg_manager.save()
+
+    def add_app_reload(self, app: str, cmd: str):
+        item = reloading_app(app, cmd)
+        self.cfg_bg.to_reloading.append(item)
+        self.cfg_manager.save()
+
+    def remove_app_reload(self, app: str):
+        self.cfg_bg.to_reloading = [
+            obj for obj in self.cfg_bg.to_reloading if obj["app"] != app
+        ]
+
         self.cfg_manager.save()

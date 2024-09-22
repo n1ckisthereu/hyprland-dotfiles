@@ -9,10 +9,6 @@ def trigger_handler():
         description="zod is simple cli to to manage my dotfiles"
     )
 
-    parser.add_argument("-s", "--skip", type=int, help="skip itens", default=0)
-    parser.add_argument("-t", "--take", type=int, help="take itens", default=10)
-    parser.add_argument("-c", "--count", action="store_true", help="count itens")
-
     subparser = parser.add_subparsers(dest="action", help="your action")
 
     # database commands
@@ -22,7 +18,11 @@ def trigger_handler():
     )
 
     setp.add_argument("-d", "--dir", help="set your wallpaper folder")
-    setp.add_argument("-uc", "--updatebg-cmd", help="define your wallpaper command")
+    setp.add_argument("-u", "--updatebg-cmd", help="define your wallpaper command")
+    setp.add_argument(
+        "-a", "--append-app", help="append item to reload list, use this format app,sig"
+    )
+    setp.add_argument("-r", "--remove-app", help="remove app from reload list")
 
     # background subcommands
     bgp = subparser.add_parser(
@@ -42,7 +42,8 @@ def trigger_handler():
         default="dark",
     )
 
-    handler(parser.parse_args())
+    subparsers = {"cfg": setp, "bg": bgp}
+    handler(parser.parse_args(), subparsers)
 
 
 def main():

@@ -24,10 +24,10 @@ class system:
             json_error = json.dumps(error_data)
             return json_error
 
-    def reload_app(self, name, signal):
-        try:
-            self.run_command(f"pkill -{signal} {name}")
-            # subprocess.run(["pkill", f"-{signal}", name], check=True)
-        except subprocess.CalledProcessError as e:
-            raise (e)
-        return True
+    # def reload_app(self, name, signal):
+    #     try:
+    #         self.run_command(f"pkill -{signal} {name}")
+    #         # subprocess.run(["pkill", f"-{signal}", name], check=True)
+    #     except subprocess.CalledProcessError as e:
+    #         raise (e)
+    #     return True
