@@ -51,3 +51,7 @@ class theme:
 
     # TODO: Generate papirus theme using this font
     # https://github.com/InioX/matugen/issues/83
+
+    # TODO: Implement colorschema for qt to
+
+    # BUG: New gnome 47 only gets the theme if the theme is defined in the GTK_THEME variable

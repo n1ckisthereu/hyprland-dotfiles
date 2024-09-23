@@ -30,7 +30,7 @@
 - noto-fonts
 - noto-fonts-emoji
 - noto-fonts-cjk
-- adw-gtk-theme
+- adw-gtk-theme (or install from repository)
 - lsd
 
 ## Installed packages with yay
