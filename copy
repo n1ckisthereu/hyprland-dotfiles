@@ -1,0 +1,6 @@
+#/bin/env sh
+
+rm -rf ./cfgs/**
+
+cp -r ~/.config/hypr/ ./cfgs/
+cp -r ~/.config/matugen/ ./cfgs/

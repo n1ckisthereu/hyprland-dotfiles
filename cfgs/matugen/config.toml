@@ -1,0 +1,29 @@
+[config]
+set_wallpaper = false
+wallpaper_tool = 'Swww'
+prefix = '@'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty.conf'
+output_path = '~/.config/kitty/colors.conf'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland.conf'
+output_path = '~/.config/hypr/confs/colors-hyprland.conf'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.qt6]
+input_path = '~/.config/matugen/templates/qt.conf'
+output_path = '~/.config/qt6ct/matugen.conf'
+
+[templates.colors_astal]
+input_path = '~/.config/matugen/templates/colors.scss'
+output_path = '~/.config/ags/style/colors.scss'
+

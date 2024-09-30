@@ -32,6 +32,11 @@
 - noto-fonts-cjk
 - adw-gtk-theme (or install from repository)
 - lsd
+- qt6ct
+- qt5ct
+- dart-sass
+- jq
+- ttf-noto-nerd
 
 ## Installed packages with yay
 
@@ -42,3 +47,4 @@
 - nvm (or volta) - gitrepo
 - yay (aur)
 - my neovim dotfiles (<https://github.com/n1ckisthereu/lazyvim-dotfiles>)
+- libastal-git (astad + agd)
