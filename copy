@@ -4,3 +4,4 @@ rm -rf ./cfgs/**
 
 cp -r ~/.config/hypr/ ./cfgs/
 cp -r ~/.config/matugen/ ./cfgs/
+cp -r ~/.fonts ./cfgs
